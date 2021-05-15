@@ -10,7 +10,9 @@ int RecvLen;
 void Listener() {
     while (true) {
         memset(Buffer, '\0', 512);
-        if((RecvLen == recvfrom(Socket, Buffer, 512, 0, (struct sockaddr*)&Listen, &FromLen)))
+        if ((RecvLen == recvfrom(Socket, Buffer, 512, 0, (struct sockaddr*)&Listen, &FromLen)) == SOCKET_ERROR) {
+
+        }
     }
 }
 
