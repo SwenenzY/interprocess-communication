@@ -13,7 +13,13 @@ int main(int argc, char* argv[])
 
     SOCKET Socket;
 
-    
+    Socket = socket(AF_INET, SOCK_DGRAM, 0);
+
+    if (Socket == -1) {
+        std::cout << "[-] Failed to create socket" << std::endl;
+        system("pause");
+        return 1;
+    }
 
     return 0;
 }
