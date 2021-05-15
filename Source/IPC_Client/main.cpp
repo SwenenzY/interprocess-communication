@@ -14,7 +14,7 @@ int main(int argc, char* argv[])
 
     SOCKET Socket;
     struct sockaddr_in Server;
-    Server.sin_addr.s_addr = INADDR_ANY;
+    Server.sin_addr.s_addr = inet_addr("127.0.0.1");
     Server.sin_family = AF_INET;
     Server.sin_port = CommPort;
 

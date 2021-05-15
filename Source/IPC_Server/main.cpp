@@ -38,7 +38,7 @@ int main(int argc, char* argv[])
     }
 
     Server.sin_family = AF_INET;
-    Server.sin_addr.s_addr = INADDR_ANY; // 127.0.0.1 ::1
+    Server.sin_addr.s_addr = inet_addr("127.0.0.1"); // 127.0.0.1 ::1
     Server.sin_port = CommPort;
 
     if (bind(Socket, (struct sockaddr*)&Server, sizeof(Server)) == SOCKET_ERROR) {
