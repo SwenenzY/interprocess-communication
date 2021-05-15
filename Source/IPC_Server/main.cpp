@@ -11,6 +11,8 @@ int main(int argc, char* argv[])
 
     #pragma endregion
 
+    SOCKET Socket;
+
     
 
     return 0;
