@@ -3,7 +3,9 @@
 #define CommPort 3152
 
 void Listener() {
+    while (true) {
 
+    }
 }
 
 int main(int argc, char* argv[])
@@ -33,8 +35,9 @@ int main(int argc, char* argv[])
         std::cout << "[-] Failed to bind socket : " << WSAGetLastError() << std::endl;
     }
 
-
+    CreateThread(0, 0, (LPTHREAD_START_ROUTINE)Listener, 0, 0, 0);
 
     std::cout << "[+] Ready " << std::endl;
+    getchar();
     return 0;
 }
