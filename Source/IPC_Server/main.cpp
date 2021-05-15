@@ -9,7 +9,7 @@ int RecvLen;
 
 void Listener() {
     while (true) {
-        memset(Buffer, '\0', 512);
+        Buffer = {};
         if ((RecvLen == recvfrom(Socket, Buffer, 512, 0, (struct sockaddr*)&Listen, &FromLen)) == SOCKET_ERROR) {
             std::cout << "[-] Failed to create recvfrom " << WSAGetLastError() << std::endl;
         }
