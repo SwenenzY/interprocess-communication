@@ -21,6 +21,9 @@ int main(int argc, char* argv[])
         return 1;
     }
 
+    Server.sin_family = AF_INET;
+    Server.sin_addr = INADDR_ANY; // 127.0.0.1 ::1
+
 
     std::cout << "[+] Ready " << std::endl;
     return 0;
