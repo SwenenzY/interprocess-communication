@@ -1,6 +1,7 @@
 #include "stdafx.h"
 
-#define CommPort 3152
+#define CommPort 3131
+#define CommServer "127.0.0.1"
 
 int main(int argc, char* argv[])
 {
@@ -14,11 +15,11 @@ int main(int argc, char* argv[])
 
     SOCKET Socket;
     struct sockaddr_in Server;
-    Server.sin_addr.s_addr = inet_addr("127.0.0.1");
+    Server.sin_addr.s_addr = inet_addr(CommServer);
     Server.sin_family = AF_INET;
-    Server.sin_port = CommPort;
+    Server.sin_port = htons(CommPort);
 
-    if ((Socket = socket(AF_INET, SOCK_DGRAM, 0)) == -1) {
+    if ((Socket = socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP)) == -1) {
         std::cout << "[-] Failed to create socket" << std::endl;
         system("pause");
         return 1;
