@@ -28,7 +28,8 @@ int main(int argc, char* argv[])
         system("pause");
         return 1;
     }
-
+    std::string Message = "Selam!";
+    int ST = send(Socket, Message.c_str(), strlen(Message.c_str()), 0);
 
     std::cout << "[+]" << std::endl;
     getchar();
