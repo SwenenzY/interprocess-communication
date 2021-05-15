@@ -29,7 +29,14 @@ int main(int argc, char* argv[])
         return 1;
     }
     std::string Message = "Selam!";
-    int ST = send(Socket, Message.c_str(), strlen(Message.c_str()), 0);
+
+    int Call = send(Socket, Message.c_str(), strlen(Message.c_str()), 0);
+
+    if (Call < 0) {
+        std::cout << "[-] Send failed" << std::endl;
+        system("pause");
+        return 1;
+    }
 
     std::cout << "[+]" << std::endl;
     getchar();
