@@ -3,13 +3,13 @@
 #define CommPort 3152
 struct sockaddr_in Server, Listen;
 SOCKET Socket;
-
 char Buffer[512];
+int RecvLen;
 
 void Listener() {
     while (true) {
         memset(Buffer, '\0', 512);
-        recvfrom(Socket,Buffer,512,0,(struct sockaddr)&)
+        recvfrom(Socket,Buffer,512,0,(struct sockaddr*)&Listen,&RecvLen)
     }
 }
 
