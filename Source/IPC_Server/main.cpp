@@ -4,12 +4,13 @@
 struct sockaddr_in Server, Listen;
 SOCKET Socket;
 char Buffer[512];
+int FromLen;
 int RecvLen;
 
 void Listener() {
     while (true) {
         memset(Buffer, '\0', 512);
-        recvfrom(Socket,Buffer,512,0,(struct sockaddr*)&Listen,&RecvLen)
+        if((RecvLen == recvfrom(Socket, Buffer, 512, 0, (struct sockaddr*)&Listen, &FromLen)))
     }
 }
 
