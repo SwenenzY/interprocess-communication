@@ -13,8 +13,8 @@ void Listener() {
         if ((RecvLen == recvfrom(Socket, Buffer, 512, 0, (struct sockaddr*)&Listen, &FromLen)) == SOCKET_ERROR) {
             std::cout << "[-] Failed to create recvfrom " << WSAGetLastError() << std::endl;
         }
-
-        if (Buffer != '\0') {
+        printf("'%d'", Buffer);
+        if (Buffer != 0) {
             std::cout << "[!] Recevied packet from " << inet_ntoa(Listen.sin_addr) << ":" << ntohs(Listen.sin_port) << std::endl;
         }
     }
