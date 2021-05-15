@@ -1,7 +1,7 @@
 #include "stdafx.h"
 
 #define CommPort 3152
-struct sockaddr_in Server;
+struct sockaddr_in Server, Listen;
 SOCKET Socket;
 
 char Buffer[512];
@@ -9,7 +9,7 @@ char Buffer[512];
 void Listener() {
     while (true) {
         memset(Buffer, '\0', 512);
-        recv_len();
+        recvfrom(Socket,Buffer,512,0,(struct sockaddr)&)
     }
 }
 
