@@ -31,7 +31,7 @@ int main(int argc, char* argv[])
     std::string Message = "Bu bir uzun test...........";
 
     int Call = send(Socket, Message.c_str(), strlen(Message.c_str()), 0);
-    std::cout << "[+] Send : " << Call << std::endl;
+    std::cout << "[+] Send : " << Call  << "("<< strlen(Message.c_str()) <<")"<< std::endl;
     if (Call < 0) {
         std::cout << "[-] Send failed" << std::endl;
         system("pause");
