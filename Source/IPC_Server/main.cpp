@@ -22,7 +22,9 @@ int main(int argc, char* argv[])
     }
 
     Server.sin_family = AF_INET;
-    Server.sin_addr = INADDR_ANY; // 127.0.0.1 ::1
+    Server.sin_addr.s_addr = INADDR_ANY; // 127.0.0.1 ::1
+    Server.sin_port = CommPort;
+
 
 
     std::cout << "[+] Ready " << std::endl;
