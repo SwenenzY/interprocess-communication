@@ -1,9 +1,10 @@
 #include "stdafx.h"
 
 #define CommPort 3152
-
 struct sockaddr_in Server;
 SOCKET Socket;
+
+char Buffer[512];
 
 void Listener() {
     while (true) {
