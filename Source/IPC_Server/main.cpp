@@ -14,7 +14,7 @@ void Listener() {
             std::cout << "[-] Failed to create recvfrom " << WSAGetLastError() << std::endl;
         }
 
-        std::cout << "[!] Recvied packet from " << Listen.sin_addr.sin_addr
+        std::cout << "[!] Recvied packet from " << inet_ntoa(Listen.sin_addr) << std::endl;
     }
 }
 
