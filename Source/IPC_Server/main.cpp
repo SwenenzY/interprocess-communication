@@ -47,7 +47,7 @@ int main(int argc, char* argv[])
 
     CreateThread(0, 0, (LPTHREAD_START_ROUTINE)Listener, 0, 0, 0);
 
-    std::cout << "[+] Ready " << std::endl;
+    std::cout << "[+] Waiting packet from client. " << std::endl;
     getchar();
     return 0;
 }
