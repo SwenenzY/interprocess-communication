@@ -10,6 +10,10 @@ int main(int argc, char* argv[])
 
     #pragma endregion
 
+    struct sockaddr_in Server;
+    Server.sin_addr.s_addr = INADDR_ANY;
+
+
 
     std::cout << "[+]" << std::endl;
     getchar();
