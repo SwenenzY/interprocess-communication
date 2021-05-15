@@ -9,7 +9,7 @@ char Buffer[512];
 void Listener() {
     while (true) {
         memset(Buffer, '\0', 512);
-        if(recv_len())
+        recv_len();
     }
 }
 
